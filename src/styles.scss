@@ -25,8 +25,11 @@ body {
 }
 
 .content-loader {
-    width: 100vw;
+    width: 91vw;
     height: auto;
+
+    padding-left: 4.5vw;
+    padding-right: 4.5vw;
 
     animation-name: loader;
     animation-duration: 0.5s;
@@ -35,7 +38,7 @@ body {
 
 @keyframes loader {
     0% {
-        transform: translateY(200px);
+        transform: translateY(100px);
         opacity: 0;
     }
 
@@ -45,4 +48,31 @@ body {
     }
 }
 
+.sidebar {
+   height: 90%;
+   width: 1vw;
+   position: fixed;
+   z-index: 1;
+   bottom: 0;
+   left: 0;
+   overflow-x: hidden;
+   padding-top: 20px;
+   background-color: red;
+}
+
+.title {
+    color: white;
+    letter-spacing: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text {
+    width: 600px;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: thin;
+    text-align: justify;
+}
 
