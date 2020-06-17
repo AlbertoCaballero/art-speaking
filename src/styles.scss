@@ -68,7 +68,7 @@ body {
 }
 
 .text {
-    width: 600px;
+    width: 40%;
     color: white;
     letter-spacing: 1px;
     line-height: 1.5;
@@ -76,3 +76,10 @@ body {
     text-align: justify;
 }
 
+.piece-container {
+    width: 100%; 
+    height: 450px; 
+    background-color: red;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

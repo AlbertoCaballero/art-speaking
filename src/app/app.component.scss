@@ -2,6 +2,7 @@
     width: 100vw;
     text-align: right;
     position: sticky;
+    top: 0;
 
     a {
         display: inline-block;
@@ -46,12 +47,11 @@
 }
 
 .under-bar {
-     position: absolute;
      width: 100vw;
-     bottom: 0;
-     padding-top: 20px;
-     padding-bottom: 20px;
      text-align: center;
+     position: sticky;
+     bottom: 0;
+     
      color: white;
 
      svg {
