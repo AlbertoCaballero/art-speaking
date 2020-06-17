@@ -2,7 +2,9 @@
     width: 100vw;
     text-align: right;
     position: sticky;
+    z-index: 10;
     top: 0;
+    background-color: black;
 
     a {
         display: inline-block;
@@ -22,6 +24,11 @@
             background-color: white;
             color: black;
             transition: 0.5s;
+        }
+
+        &:active {
+            transform: scale(0.95);
+            transition: 0.1s;
         }
     }
 
@@ -50,9 +57,9 @@
      width: 100vw;
      text-align: center;
      position: sticky;
-     bottom: 0;
-     
+     bottom: 15px;
      color: white;
+     z-index: 10;
 
      svg {
          fill: white;
@@ -84,3 +91,4 @@
         transition: 0.3s;
     }
 }
+
