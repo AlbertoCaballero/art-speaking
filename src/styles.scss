@@ -31,11 +31,13 @@ body {
 }
 
 .content-loader {
-    width: 91vw;
+    width: 90vw;
     height: 85vh;
 
-    padding-left: 4.5vw;
-    padding-right: 4.5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    margin-top: 10vh;
 
     animation-name: loader;
     animation-duration: 0.5s;
@@ -84,28 +86,57 @@ body {
 
 .piece-container {
     width: 100%; 
-    height: 450px; 
-    margin-top: 15px;
-    margin-bottom: 15px;
+    height: auto; 
+    margin-top: 45px;
+    margin-bottom: 45px;
+    text-align: center;
+
+    .description {
+        width: 430px;
+        height: 430px;
+        background-color: black;
+        opacity: 0;            
+        transition: 0.3s;
+        padding: 10px;
+
+        &:hover {
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+    }
 
     .left, .center, .right {
-        width: 30%;
-        height: 100%;
+        width: 450px;
+        height: 450px;
         display: inline-block;
         border-color: white;
         color: white;
         background-color: white;
         transition: 0.3s;
+        margin: 25px;
 
         &:hover {
-            transform: scale(1.08);
+            transform: scale(1.05);
             transition: 0.3s;
             cursor: pointer;
         }
     }
 
+    .left {
+        background-image: url("https://www.vangoghgallery.com/img/starry_night_full.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .center {
-        margin-left: 5%;
-        margin-right: 5%;
+        background-image: url("https://www.superprof.co.uk/blog/wp-content/uploads/2019/05/history-of-painting-1060x771.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .right {
+        background-image: url("https://cdn.shopify.com/s/files/1/0057/4322/products/DSCN9876_de5fd915-522f-4cf9-8d04-eabc66fb8fe0_2048x2048.JPG?v=1571305720");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
