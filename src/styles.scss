@@ -31,13 +31,12 @@ body {
 }
 
 .content-loader {
-    width: 90vw;
+    width: 91vw;
     height: 85vh;
 
-    padding-left: 5vw;
-    padding-right: 5vw;
-
-    margin-top: 10vh;
+    padding-left: 4.5vw;
+    padding-right: 4.5vw;
+    padding-top: 6vh;
 
     animation-name: loader;
     animation-duration: 0.5s;
@@ -100,7 +99,7 @@ body {
         padding: 10px;
 
         &:hover {
-            opacity: 0.8;
+            opacity: 0.95;
             transition: 0.3s;
         }
     }
@@ -129,7 +128,7 @@ body {
     }
 
     .center {
-        background-image: url("https://www.superprof.co.uk/blog/wp-content/uploads/2019/05/history-of-painting-1060x771.jpg");
+        background-image: url("https://www.rcnmag.com/resources/images/imager/resources/images/5648/Ultimate-Classic-Cars-New-Cobra_e4bbe50e47a1a7b5de93f94f7d58d876.jpg");
         background-repeat: no-repeat;
         background-size: cover;
     }
