@@ -4,7 +4,13 @@
     position: fixed;
     z-index: 10;
     top: 0;
-    background-color: #222222;
+    
+    background-color: black;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/53e43c86e4b0e9902e0be236/1487697157510-662ZESNNIJFSUGEU7D0A/ke17ZwdGBToddI8pDm48kJUlZr2Ql5GtSKWrQpjur5t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UfNdxJhjhuaNor070w_QAc94zjGLGXCa1tSmDVMXf8RUVhMJRmnnhuU1v2M8fLFyJw/_DFA3999-Edit.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
 
     a {
         display: inline-block;
@@ -61,9 +67,8 @@
      width: 100%;
      text-align: center;
      position: fixed;
-     bottom: 15px;
+     bottom: 25px;
      color: white;
-     z-index: 10;
 
      svg {
          fill: white;

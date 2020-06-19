@@ -1,0 +1,72 @@
+.piece-description {
+    display: inline-block;
+    width: 50%;
+}
+
+.piece-view {
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+    background-image: url('https://www.italymagazine.com/sites/default/files/styles/800xauto/public/david-michelangelo.jpg?itok=jUZF1F5y');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.text {
+    width: 100%;
+}
+
+.question-input {
+    width: 80%;
+    padding: 15px;
+    background-color: #111111;
+    color: white;
+    border-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #222222;
+        transition: 0.3s;
+    }
+
+    &:active {
+        background-color: #333333;
+    }
+}
+
+.send-button {
+    width: 15%;    
+    padding: 15px;
+    border-color: transparent;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+textarea {
+    resize: none;     
+    color: white;
+    width: 98%; 
+    height: 130px; 
+    padding: 2%; 
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;;
+    background-color: transparent;
+}
