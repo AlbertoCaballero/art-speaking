@@ -3,13 +3,13 @@ import { Question } from './question';
 export class User {
     id: string;
     name: string;
-    lastname: string;
-    age: number;
-    sex: string;
+    lastname?: string;
+    age?: number;
+    sex?: string;
     email: string;
-    musueum: string;
+    musueum?: string;
 
-    questions: Question[];
+    questions?: Question[];
 
     token?: string;
 }

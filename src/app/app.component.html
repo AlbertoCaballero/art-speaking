@@ -9,7 +9,21 @@
     <a routerLink="/about" routerLinkActive="active-link">About</a>
     <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
   </ul>
+  
+  <!-- For user authentication -->
+  <div *ngIf="auth.user$ | async as user; else login">
+    {{ user | json }}
+    <hr>
+    <button class="button" (click)="auth.signOut()">Sign Out</button>
+  </div>
+
+  <!-- Sign Out Button template -->
+  <ng-template #login>
+    <button class="button" (click)="auth.googleSignin()">Login with Google</button>
+  </ng-template>
   </nav>
+
+
 
 <router-outlet></router-outlet>
 
