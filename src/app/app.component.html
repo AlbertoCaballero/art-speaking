@@ -1,27 +1,24 @@
 <nav class="nav-bar">
+  <!-- Logo and name -->
   <div class="logo-container">
     <img routerLink="/home" src="../assets/logo-skeletonized.png" alt="Art Speaking Logo" class="logo">
-    <b>ART SPEAKING</b>
+    <b>ART SPEAKING&nbsp;&nbsp;<b class="user-name" *ngIf="auth.user$ | async as user; else login"><button class="button-logout" (click)="auth.signOut()">&nbsp;</button> &nbsp;{{ user.name }} </b></b>
   </div>
-  <ul>
+  
+  <!-- Navigation links -->
+  <ul>    
     <a routerLink="/home" routerLinkActive="active-link">Home</a>
     <a routerLink="/gallery" routerLinkActive="active-link">Gallery</a>
     <a routerLink="/about" routerLinkActive="active-link">About</a>
     <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
   </ul>
-  
-  <!-- For user authentication -->
-  <div *ngIf="auth.user$ | async as user; else login">
-    {{ user | json }}
-    <hr>
-    <button class="button" (click)="auth.signOut()">Sign Out</button>
-  </div>
-
-  <!-- Sign Out Button template -->
+ 
+  <!-- Sign In Button template -->
   <ng-template #login>
-    <button class="button" (click)="auth.googleSignin()">Login with Google</button>
+    <button class="button-login" (click)="auth.googleSignin()">&nbsp;</button>
   </ng-template>
-  </nav>
+  
+</nav>
 
 
 

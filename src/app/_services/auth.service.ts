@@ -42,7 +42,7 @@ export class AuthService {
 
   async signOut() {
     await this.afAuth.signOut();
-    return this.router.navigate(['/piece']);
+    return this.router.navigate(['/']);
   }
 
   private updateUserData(user : firebase.User) {
