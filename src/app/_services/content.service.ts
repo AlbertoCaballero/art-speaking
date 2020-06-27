@@ -1,9 +1,27 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { User } from '../_models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
+
+  createDocument(collection: string, document: any) {
+    return this.firestore.collection(collection).doc(document);
+  }
+
+  readDocument(collection: string, document: any) {
+    return this.firestore.collection(collection).snapshotChanges();
+  }
+
+  updateDocument(collection: string, id: string, document: any) {
+    return this.firestore.doc(collection+"/"+id).update(document);
+  }
+
+  deleteDocument(collection: string, id: string, document: any) {
+    return this.firestore.doc(collection+"/"+id).delete();
+  }
 }

@@ -12,8 +12,13 @@ export const environment = {
     storageBucket: "artspeaking-8dc29.appspot.com",
     messagingSenderId: "429565406876",
     appId: "1:429565406876:web:56a06fc8f856b89de14759"
+  },
+  collections: {
+    users: "users",
+    museums: "museums",
+    questions: "questions",
+    pieces: "pieces"
   }
-  
 };
 
 /*
