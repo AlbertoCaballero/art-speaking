@@ -48,7 +48,7 @@ export class AuthService {
   // Signout sequence method
   async signOut() {
     await this.afAuth.signOut();
-    return this.router.navigate(['/']);
+    return this.router.navigate(['/home']);
   }
 
   // Update user data if is authenticated and only if id is the same on Data Base
