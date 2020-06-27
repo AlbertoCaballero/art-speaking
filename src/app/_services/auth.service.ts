@@ -16,11 +16,15 @@ import { User } from '../_models';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  // User observable object
   user$: Observable<any>;
 
   constructor(
+    // Angular Firestore Authorization API
     private afAuth: AngularFireAuth,
+    // Angular Firestore API
     private afs: AngularFirestore,
+    // Angular Router Object
     private router: Router
   ) {
     this.user$ = this.afAuth.authState.pipe(
@@ -34,17 +38,20 @@ export class AuthService {
     );
   }
 
+  // Sign in with Google Method
   async googleSignin() {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
     return this.updateUserData(credential.user);
   }
 
+  // Signout sequence method
   async signOut() {
     await this.afAuth.signOut();
     return this.router.navigate(['/']);
   }
 
+  // Update user data if is authenticated and only if id is the same on Data Base
   private updateUserData(user : firebase.User) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
 
@@ -56,5 +63,4 @@ export class AuthService {
 
     return userRef.set(data, { merge: true });
   }
-
 }
