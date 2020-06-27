@@ -10,9 +10,8 @@ import { PieceComponent } from './piece/piece.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AccessComponent } from './access/access.component';
-import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreModule } from '@angular/fire/firestore';
-import { auth } from 'firebase';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
