@@ -4,6 +4,7 @@ export class Museum {
     id: string;
     name: string;
     code?: string;
-    intro?: string;
+    description?: string;
     pieces?: Piece[];
+    background?: string;
 }

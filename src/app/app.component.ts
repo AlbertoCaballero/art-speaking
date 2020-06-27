@@ -6,6 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Museum } from './_models';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { StateService } from './_services/state.service';
 
 @Component({
   selector: 'app-root',
@@ -13,50 +14,41 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'art-speaking';
+  title = 'Art Speaking';
   museum: Museum = {
     id: "",
-    name: ""
+    name: "Art Speaking"
   };
-  data: any;
-  params: HttpParams;
-  client: HttpClient;
-  id: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private content: ContentService, public auth: AuthService) {
-    // Retrives the URL parameters
+  /**
+   * @param activatedRoute Current Router route
+   * @param content Content Service provider
+   * @param auth Authorization Service provider
+   */
+  constructor(private activatedRoute: ActivatedRoute, private content: ContentService, private state: StateService, public auth: AuthService) {
     this.activatedRoute.queryParams.subscribe(params => {
       let id = params['id'];
-      this.id = id;
 
       if (id != null) {
         this.museum.id = id;
         this.getMuseumName(this.museum.id);
-        console.log(this.museum.id);
+        state.changeCurrentMuseumId(id);
 
       } else {
-        this.museum.name = "Art Speaking";
+        console.log("No museum id defined");
       }
     });
   }
 
-  ngOnInit() {
-
-    // Read Http params for museum id
-    if (this.id != null) {
-      this.content.readDocument(environment.collections.museums, this.id).subscribe(doc => {
-        this.data = doc.payload.get("name");
-        console.log(this.data);
-      });
-    }
-  }
+  ngOnInit() {  }
 
   /**
-   * Returns the museum nae via an id
+   * Returns the museum name base on the id provided
    */
   getMuseumName(id: string) {
     this.content.readDocument("museums", id).subscribe(doc => {
       this.museum.name = doc.payload.get("name");
+      this.museum.description = doc.payload.get("description")
     });
   }
 }
