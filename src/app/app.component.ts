@@ -28,6 +28,7 @@ export class AppComponent {
         this.museum.id = id;
         this.getMuseumData(this.museum.id);
         state.changeCurrentMuseum(this.museum);
+        console.log(this.museum.pieces);
 
       } else {
         console.log("No museum id defined");
@@ -48,6 +49,7 @@ export class AppComponent {
       this.museum.name = doc.payload.get("name");
       this.museum.description = doc.payload.get("description");
       this.museum.background = doc.payload.get("background");
+      this.museum.pieces = doc.payload.get("pieces");
       this.changeBackgrounds();
     });
   }

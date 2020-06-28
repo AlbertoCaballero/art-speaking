@@ -5,7 +5,7 @@ export class Museum {
     name: string;
     code?: string;
     description?: string;
-    pieces?: Piece[];
+    pieces?: string[];
     background?: string;
 
     constructor() {
