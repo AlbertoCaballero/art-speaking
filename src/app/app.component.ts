@@ -15,10 +15,7 @@ import { StateService } from './_services/state.service';
 })
 export class AppComponent {
   title = 'Art Speaking';
-  museum: Museum = {
-    id: "",
-    name: "Art Speaking"
-  };
+  museum: Museum = new Museum;
 
   /**
    * @param activatedRoute Current Router route
@@ -32,7 +29,7 @@ export class AppComponent {
       if (id != null) {
         this.museum.id = id;
         this.getMuseumName(this.museum.id);
-        state.changeCurrentMuseumId(id);
+        state.changeCurrentMuseum(this.museum);
 
       } else {
         console.log("No museum id defined");
@@ -48,7 +45,7 @@ export class AppComponent {
   getMuseumName(id: string) {
     this.content.readDocument("museums", id).subscribe(doc => {
       this.museum.name = doc.payload.get("name");
-      this.museum.description = doc.payload.get("description")
+      this.museum.description = doc.payload.get("description");
     });
   }
 }

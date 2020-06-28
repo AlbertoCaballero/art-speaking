@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Museum } from '../_models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StateService {
 
-  private museumIdSource = new BehaviorSubject<string>("default-id");
-  currentMuseumId = this.museumIdSource.asObservable();
+  private sourceMuseum = new BehaviorSubject<Museum>(new Museum);
+  currentMuseum = this.sourceMuseum.asObservable();
 
   constructor() { }
 
   /**
-   * Change museum id for all components to see
-   * @param newId The new museum id
+   * Canges the current museum for all components to see
+   * @param musuem The new museum object
    */
-  changeCurrentMuseumId(newId: string) {
-    this.museumIdSource.next(newId);
+  changeCurrentMuseum(musuem: Museum) {
+    this.sourceMuseum.next(musuem);
   }
 }

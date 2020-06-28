@@ -8,12 +8,12 @@ import { StateService } from '../_services/state.service';
 })
 export class GalleryComponent implements OnInit {
 
-  testid: string;
+  test: string;
 
   constructor(private state: StateService) { }
 
   ngOnInit() {
-    this.state.currentMuseumId.subscribe(museumid => this.testid = museumid);
+    this.state.currentMuseum.subscribe(museum => this.test = museum.name);
   }
 
 }
