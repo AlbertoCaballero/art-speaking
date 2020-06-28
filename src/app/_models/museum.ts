@@ -6,6 +6,7 @@ export class Museum {
     code?: string;
     description?: string;
     pieces?: string[];
+    piecesData?: Piece[];
     background?: string;
 
     constructor() {

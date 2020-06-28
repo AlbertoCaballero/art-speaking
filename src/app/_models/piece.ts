@@ -10,5 +10,15 @@ export class Piece {
     miniature: string;
     highres: string;
 
-    questions: Question[];
+    questions?: Question[];
+
+    constructor() {
+        this.id = "";
+        this.title = "";
+        this.author = "";
+        this.description = "";
+        this.museumid = "";
+        this.miniature = "";
+        this.highres = "";
+    }
 }
