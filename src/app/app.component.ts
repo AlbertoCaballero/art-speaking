@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from './_services/auth.service';
 import { ContentService } from './_services/content.service';
 
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Museum } from './_models';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from 'src/environments/environment';
 import { StateService } from './_services/state.service';
 
 @Component({
@@ -28,24 +26,36 @@ export class AppComponent {
 
       if (id != null) {
         this.museum.id = id;
-        this.getMuseumName(this.museum.id);
+        this.getMuseumData(this.museum.id);
         state.changeCurrentMuseum(this.museum);
 
       } else {
         console.log("No museum id defined");
       }
     });
+
   }
 
-  ngOnInit() {  }
+  ngOnInit() { 
+    this.changeBackgrounds();
+  }
 
   /**
    * Returns the museum name base on the id provided
    */
-  getMuseumName(id: string) {
+  getMuseumData(id: string) {
     this.content.readDocument("museums", id).subscribe(doc => {
       this.museum.name = doc.payload.get("name");
       this.museum.description = doc.payload.get("description");
+      this.museum.background = doc.payload.get("background");
+      this.changeBackgrounds();
     });
+  }
+
+  changeBackgrounds() {
+    // Set background images
+    document.body.style.backgroundImage = "url('"+ this.museum.background +"')";
+    document.getElementById("nav-id").style.backgroundImage = "url('"+ this.museum.background +"')";
+    console.log(this.museum); 
   }
 }
