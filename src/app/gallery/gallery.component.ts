@@ -18,11 +18,13 @@ export class GalleryComponent implements OnInit {
     this.state.currentMuseum.subscribe(museum => {
       this.museum = museum;
     });
-
-    this.getPiecesData();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.museum.piecesData.length == 0) {
+      this.getPiecesData();
+    } 
+  }
 
   getPiecesData() {
     for(var i in this.museum.pieces) {
