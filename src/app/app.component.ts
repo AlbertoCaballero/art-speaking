@@ -41,9 +41,6 @@ export class AppComponent {
     this.changeBackgrounds();
   }
 
-  /**
-   * Returns the museum name base on the id provided
-   */
   getMuseumData(id: string) {
     this.content.readDocument("museums", id).subscribe(doc => {
       this.museum.name = doc.payload.get("name");

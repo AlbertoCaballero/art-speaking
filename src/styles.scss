@@ -130,6 +130,10 @@ body {
         background-color: white;
         transition: 0.3s;
         margin: 25px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
 
         &:hover {
             transform: scale(1.15); 
@@ -140,23 +144,14 @@ body {
 
     .left {
         background-image: url("https://www.vangoghgallery.com/img/starry_night_full.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
     }
 
     .center {
         background-image: url("https://images2.bonhams.com/image?src=Images/live/2018-07/12/24784253-1-92.jpg&width=640&height=480&autosizefit=1");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
     }
 
     .right {
         background-image: url("https://i.pinimg.com/originals/c9/93/06/c9930684262bc560af0bd653d3f082d2.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
     }
 }
 

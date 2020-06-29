@@ -23,7 +23,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
     if(this.museum.piecesData.length == 0) {
       this.getPiecesData();
-    } 
+    }
   }
 
   getPiecesData() {
@@ -46,5 +46,14 @@ export class GalleryComponent implements OnInit {
         p.highres = doc.payload.get("highres");
     });
     return p;
+  }
+
+  /**
+   * Changes the miniature of the given document object to the image url
+   * @param id Id of the element to change
+   * @param url Url of the miniature image
+   */
+  changeMiniature(id: string, url: string) {
+    document.getElementById(id).style.backgroundImage = "url('"+ url +"')";
   }
 }

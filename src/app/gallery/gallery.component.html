@@ -6,7 +6,7 @@
 
     <div class="piece-container">
         
-        <div *ngFor="let piece of museum.piecesData" class="left" id="{{ piece.id }}">
+        <div *ngFor="let piece of museum.piecesData" id="{{ piece.id }}" [style.background]="'url(' + piece.miniature + ')'" class="left">
             <div class="description">
                 <h3>{{ piece.title }}</h3>
                 <p>by {{ piece.author }}</p>
