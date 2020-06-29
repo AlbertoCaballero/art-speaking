@@ -7,6 +7,8 @@ export class User {
     age?: number;
     sex?: string;
     email: string;
+    phone?: string;
+    photo?: string;
     musueum?: string;
 
     questions?: Question[];
