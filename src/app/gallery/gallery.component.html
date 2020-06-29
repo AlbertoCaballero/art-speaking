@@ -6,31 +6,13 @@
 
     <div class="piece-container">
         
-        <div *ngFor="let piece of museum.piecesData" id="{{ piece.id }}" [style.background]="'url(' + piece.miniature + ')'" class="left">
+        <div routerLink="/piece" *ngFor="let piece of museum.piecesData" id="{{ piece.id }}" [style.background-image]="'url(' + piece.miniature + ')'" class="miniature">
             <div class="description">
                 <h3>{{ piece.title }}</h3>
                 <p>by {{ piece.author }}</p>
             </div>
         </div>
 
-        <div routerLink="/piece" class="left">
-            <div class="description">
-                <h3>Starry Night</h3>
-                <p>by Vincent van Gogh</p>
-            </div>
-        </div>
-        <div routerLink="/piece" class="center">
-            <div class="description">
-                <h3>Mercedes Benz</h3>
-                <p>by Mercedes Benz</p>
-            </div>
-        </div>
-        <div routerLink="/piece" class="right">
-            <div class="description">
-                <h3>David</h3>                
-                <p>by Michel Angelo</p>
-            </div>
-        </div>
     </div>
 </div>
 

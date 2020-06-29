@@ -122,7 +122,7 @@ body {
         }
     }
 
-    .left, .center, .right {
+    .miniature {
         width: 25vw;
         height: 25vw;
         display: inline-block;
@@ -134,24 +134,11 @@ body {
         background-size: cover;
         background-position: center;
 
-
         &:hover {
             transform: scale(1.15); 
             transition: 0.3s;
             cursor: pointer;
         }
-    }
-
-    .left {
-        background-image: url("https://www.vangoghgallery.com/img/starry_night_full.jpg");
-    }
-
-    .center {
-        background-image: url("https://images2.bonhams.com/image?src=Images/live/2018-07/12/24784253-1-92.jpg&width=640&height=480&autosizefit=1");
-    }
-
-    .right {
-        background-image: url("https://i.pinimg.com/originals/c9/93/06/c9930684262bc560af0bd653d3f082d2.jpg");
     }
 }
 
