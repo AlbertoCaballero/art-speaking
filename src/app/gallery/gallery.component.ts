@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '../_services/state.service';
 import { Piece, Museum } from '../_models';
 import { ContentService } from '../_services/content.service';
-import { stat } from 'fs';
 
 @Component({
   selector: 'app-gallery',
