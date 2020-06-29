@@ -6,10 +6,10 @@
 
     <div class="piece-container">
         
-        <div *ngFor="let piece of museum.pieces" class="left">
+        <div *ngFor="let piece of museum.piecesData" class="left" id="{{ piece.id }}">
             <div class="description">
-                <h3>{{ piece }}</h3>
-                <p>by {{ piece }}</p>
+                <h3>{{ piece.title }}</h3>
+                <p>by {{ piece.author }}</p>
             </div>
         </div>
 

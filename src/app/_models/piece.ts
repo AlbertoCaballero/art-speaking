@@ -5,7 +5,7 @@ export class Piece {
     title: string;
     author: string;
     description: string;
-    museumid: string;
+    museumid?: string;
 
     miniature: string;
     highres: string;
