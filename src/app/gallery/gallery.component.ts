@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '../_services/state.service';
 import { Piece, Museum } from '../_models';
 import { ContentService } from '../_services/content.service';
+import { stat } from 'fs';
 
 @Component({
   selector: 'app-gallery',
@@ -24,6 +25,14 @@ export class GalleryComponent implements OnInit {
     if(this.museum.piecesData.length == 0) {
       this.getPiecesData();
     }
+  }
+
+  pieceClicked(id: string) {
+    // We have the choosen piece id
+    console.log(id);
+
+    // Set state service piece for all components to see
+    this.state.changeCurrentPiece(this.museum.piecesData[this.museum.pieces.indexOf(id)])
   }
 
   getPiecesData() {

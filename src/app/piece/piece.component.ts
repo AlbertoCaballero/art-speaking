@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '../_services/state.service';
+import { Piece } from '../_models'
 
 @Component({
   selector: 'app-piece',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PieceComponent implements OnInit {
 
-  constructor() { }
+  piece: Piece;
+
+  constructor(private state: StateService) { 
+    this.state.currentPiece.subscribe(piece => {
+      this.piece = piece;
+    })
+  }
 
   ngOnInit() {
+    console.log(this.piece)
   }
 
 }

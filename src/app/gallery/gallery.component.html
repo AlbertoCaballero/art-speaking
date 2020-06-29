@@ -6,7 +6,7 @@
 
     <div class="piece-container">
         
-        <div routerLink="/piece" *ngFor="let piece of museum.piecesData" id="{{ piece.id }}" [style.background-image]="'url(' + piece.miniature + ')'" class="miniature">
+        <div routerLink="/piece" *ngFor="let piece of museum.piecesData" id="{{ piece.id }}" (click)="pieceClicked(piece.id)" [style.background-image]="'url(' + piece.miniature + ')'" class="miniature">
             <div class="description">
                 <h3>{{ piece.title }}</h3>
                 <p>by {{ piece.author }}</p>
