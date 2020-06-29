@@ -31,6 +31,9 @@ export class AppComponent {
         console.log(this.museum.pieces);
 
       } else {
+        this.museum.id = "5XeHXwdtQ4K3GvvRSzVY"; // Pretty much default museum id TODO: ArtSpeaking Id
+        this.getMuseumData(this.museum.id);
+        state.changeCurrentMuseum(this.museum);
         console.log("No museum id defined");
       }
     });

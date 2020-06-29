@@ -6,15 +6,19 @@
             <br><br>
         </p>
         
-        <textarea readonly name="questions" id="questions-asked" cols="80" placeholder="Your questions will be shown here.">
-        </textarea>
+        <div *ngFor="let question of questions; let i=index">
+            <div *ngIf="i>questions.length-6" class="question">
+                {{ question }}
+            </div>
+        </div>
 
         <br><br>
 
-        <input type="text" name="question" id="question-boc" placeholder="Ask Something" class="question-input">
+        <!-- Question input and button -->
+        <input type="text" name="question" id="question-bloc" placeholder="Ask Something" class="question-input">
         <input type="button" name="send" id="send-question" value="send" class="send-button">
 
-        <br><br><br><br>
+        <br><br><br>
     </div>
 
     <div class="piece-view" [style.background-image]="'url(' + piece.highres + ')'">

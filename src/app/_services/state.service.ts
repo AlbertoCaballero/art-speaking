@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Museum, Piece } from '../_models';
+import { Museum, Piece, User } from '../_models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,9 @@ export class StateService {
 
   private sourcePiece = new BehaviorSubject<Piece>(new Piece);
   currentPiece = this.sourcePiece.asObservable();
+
+  private sourceUser = new BehaviorSubject<User>(new User);
+  currentUser = this.sourceUser.asObservable();
 
   constructor() { }
 
@@ -29,5 +32,13 @@ export class StateService {
    */
   changeCurrentPiece(piece: Piece) {
     this.sourcePiece.next(piece);
+  }
+
+  /**
+   * Changes the current user for all components to see
+   * @param user The new user object
+   */
+  changeCurrentUser(user: User) {
+    this.sourceUser.next(user);
   }
 }

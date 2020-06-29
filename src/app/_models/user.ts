@@ -3,7 +3,6 @@ import { Question } from './question';
 export class User {
     id: string;
     name: string;
-    lastname?: string;
     age?: number;
     sex?: string;
     email: string;
@@ -11,7 +10,8 @@ export class User {
     photo?: string;
     musueum?: string;
 
-    questions?: Question[];
+    questions?: string[];
+    questionsData?: Question[];
 
     token?: string;
 }

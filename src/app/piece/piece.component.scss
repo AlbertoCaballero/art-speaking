@@ -22,7 +22,7 @@
 }
 
 .question-input {
-    width: 80%;
+    width: 70%;
     padding: 15px;
     background-color: #111111;
     color: white;
@@ -59,7 +59,7 @@
 }
 
 textarea {
-    resize: none;     
+    resize: none;
     color: white;
     width: 98%; 
     height: 130px; 
@@ -67,6 +67,13 @@ textarea {
 
     border-width: 1px;
     border-style: solid;
-    border-color: transparent;;
+    border-color: transparent;
     background-color: transparent;
+}
+
+.question {
+    color: #aaaaaa;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

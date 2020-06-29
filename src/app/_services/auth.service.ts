@@ -13,6 +13,7 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { User } from '../_models';
+import { StateService } from './state.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -25,11 +26,19 @@ export class AuthService {
     // Angular Firestore API
     private afs: AngularFirestore,
     // Angular Router Object
-    private router: Router
+    private router: Router,
+    // State Service
+    private state: StateService
   ) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
+          this.state.changeCurrentUser({
+            id: user.uid,
+            name: user.displayName,
+            email: user.email,
+            photo: user.photoURL
+          });
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
