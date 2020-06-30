@@ -48,25 +48,30 @@ export class PieceComponent implements OnInit {
   }
 
   getQuestionsData(ids: string[]) {
-    for (let id in ids) {
-      this.content.readDocument("questions", ids[id]).subscribe(doc => {
-        // Here is the key, rigth now retrives properly first time and then on update retrives the first one again
-        if (this.user.questionsData.length < this.user.questions.length) {
-          this.user.questionsData.push({
-            id: doc.payload.id,
-            question: doc.payload.get("question"),
-            user: doc.payload.get("user"),
-            piece: doc.payload.get("piece")
-          });
-        }
-      })
+    if (!this.user.questionsData.length) {
+      for (let id in ids) {
+        this.content.readDocument("questions", ids[id]).subscribe(doc => {
+          if (this.user.questionsData.length < this.user.questions.length) {
+            this.user.questionsData.push({
+              id: doc.payload.id,
+              question: doc.payload.get("question"),
+              user: doc.payload.get("user"),
+              piece: doc.payload.get("piece")
+            });
+          }
+        })
+      }
+      this.user.questions = ids;
+      this.state.changeCurrentUser(this.user);
+      console.log(this.user);
     }
-    this.user.questions = ids;
-    this.state.changeCurrentUser(this.user);
-    console.log(this.user);
   }
 
   sendQuestion() {
+
+    this.user.questionsData = [];
+    this.state.changeCurrentUser(this.user);
+
     if (this.questionBox != "") {
       let resp = this.questionService.createQuestion({
         question: this.questionBox,
