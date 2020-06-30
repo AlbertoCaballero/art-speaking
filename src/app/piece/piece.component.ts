@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '../_services/state.service';
 import { Piece, Question, User } from '../_models'
 import { ContentService } from '../_services/content.service';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
@@ -44,9 +43,15 @@ export class PieceComponent implements OnInit {
     for(let id in ids) {
       console.log(ids[id]);
       this.content.readDocument("questions", ids[id]).subscribe(doc => {
-        this.questions.push(doc.payload.get("question"));
+        this.user.questionsData.push({
+          id: doc.payload.id,
+          question: doc.payload.get("question"),
+          user: doc.payload.get("userid"),
+          piece: doc.payload.get("pieceid")
+        });
       })
     }
-    console.log(this.questions);
+    this.state.changeCurrentUser(this.user);
+    console.log(this.user);
   }
 }

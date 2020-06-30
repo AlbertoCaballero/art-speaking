@@ -39,6 +39,7 @@ export class StateService {
    * @param user The new user object
    */
   changeCurrentUser(user: User) {
+    user.questionsData = [];
     this.sourceUser.next(user);
   }
 }

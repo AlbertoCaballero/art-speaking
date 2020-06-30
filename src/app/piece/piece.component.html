@@ -6,9 +6,9 @@
             <br><br>
         </p>
         
-        <div *ngFor="let question of questions; let i=index">
-            <div *ngIf="i>questions.length-6" class="question">
-                {{ question }}
+        <div *ngFor="let question of user.questionsData; let i=index">
+            <div *ngIf="i>user.questionsData.length-6 && question.piece == piece.id" class="question">
+                {{ question.question }}
             </div>
         </div>
 
