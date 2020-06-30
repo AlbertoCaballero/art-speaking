@@ -1,7 +1,7 @@
 import { User } from './user';
 
 export class Question {
-    id: string;
+    id?: string;
     question: string;
     user: string;
     piece: string;

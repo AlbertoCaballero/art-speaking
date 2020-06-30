@@ -15,8 +15,8 @@
         <br><br>
 
         <!-- Question input and button -->
-        <input type="text" name="question" id="question-bloc" placeholder="Ask Something" class="question-input">
-        <input type="button" name="send" id="send-question" value="send" class="send-button">
+        <input [(ngModel)]="questionBox" type="text" name="question" id="question-box" placeholder="Ask Something" class="question-input">
+        <input type="button" name="send" (click)="sendQuestion()" id="send-question" value="send" class="send-button">
 
         <br><br><br>
     </div>
