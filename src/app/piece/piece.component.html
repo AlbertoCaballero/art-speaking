@@ -11,7 +11,7 @@
         </p>
         
         <div *ngFor="let question of user.questionsData; let i=index">
-            <div *ngIf="i>user.questionsData.length-6 && question.piece == piece.id" class="question">
+            <div *ngIf="question.piece == piece.id" class="question">
                 {{ question.question }}
             </div>
         </div>

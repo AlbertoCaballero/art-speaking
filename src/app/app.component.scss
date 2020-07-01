@@ -159,6 +159,9 @@
             visibility: visible;
             float: left;
         }
+        .user-name, .button-login, .button-logout {
+            visibility: visble;
+        }
         ul {
             visibility: visible;
             position: absolute;
@@ -186,6 +189,10 @@
         .logo-container {
             visibility: hidden;
             margin-left: 0;
+            
+        }
+        .user-name, .button-login, .button-logout {
+            visibility: visble;
         }
         .logo {
             margin-left: 0;

@@ -32,6 +32,8 @@ export class PieceComponent implements OnInit {
     if (this.user.questionsData.length == 0) {
       this.getUserQuestionsIds(this.user.id);
     }
+
+    console.log(this.user);
   }
 
   // Read user data to retrive question ids
@@ -68,18 +70,13 @@ export class PieceComponent implements OnInit {
 
   sendQuestion() {
 
-    this.user.questionsData = [];
-    this.state.changeCurrentUser(this.user);
-
     if (this.questionBox != "") {
       let resp = this.questionService.createQuestion({
         question: this.questionBox,
         user: this.user.id,
         piece: this.piece.id
       });
-      resp.then(e => {
-        this.questionBox = "";
-      });
+      this.questionBox = "";
 
     } else {
       alert("Nothing in question box.");
