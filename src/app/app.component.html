@@ -6,18 +6,18 @@
   </div>
   
   <!-- Navigation links -->
-  <ul>    
-    <a routerLink="/home" routerLinkActive="active-link">Home</a>
-    <a routerLink="/gallery" routerLinkActive="active-link">Gallery</a>
-    <a routerLink="/about" routerLinkActive="active-link">About</a>
-    <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
+  <ul *ngIf="resposiveMenuVisible">    
+    <a routerLink="/home" routerLinkActive="active-link" (click)="toggleResponsiveMenu()">Home</a>
+    <a routerLink="/gallery" routerLinkActive="active-link" (click)="toggleResponsiveMenu()">Gallery</a>
+    <a routerLink="/about" routerLinkActive="active-link" (click)="toggleResponsiveMenu()">About</a>
+    <a routerLink="/contact" routerLinkActive="active-link" (click)="toggleResponsiveMenu()">Contact</a>
   </ul>
  
   <!-- Sign In Button template -->
   <ng-template #login>
     <button class="button-login" (click)="auth.googleSignin()">&nbsp;</button>
   </ng-template>
-  
+    <img src="../assets/MenuBurger.png" alt="Menu icon" class="menu-icon" *ngIf="!resposiveMenuVisible" (click)="toggleResponsiveMenu()">
 </nav>
 
 <!-- Content loader -->

@@ -1,4 +1,8 @@
 <div class="content-loader">
+
+    <div class="piece-view" [style.background-image]="'url(' + piece.highres + ')'">
+    </div>
+
     <div class="piece-description">
         <h1 class="title">{{piece.title}}</h1>
         <p class="text">
@@ -18,10 +22,7 @@
         <input [(ngModel)]="questionBox" type="text" name="question" id="question-box" placeholder="Ask Something" class="question-input">
         <input type="button" name="send" (click)="sendQuestion()" id="send-question" value="send" class="send-button">
 
-        <br><br><br>
-    </div>
-
-    <div class="piece-view" [style.background-image]="'url(' + piece.highres + ')'">
+        <br><br><br><br><br><br>
     </div>
 </div>
 

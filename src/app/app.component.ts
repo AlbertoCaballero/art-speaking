@@ -14,6 +14,7 @@ import { StateService } from './_services/state.service';
 export class AppComponent {
   title = 'Art Speaking';
   museum: Museum = new Museum;
+  resposiveMenuVisible: boolean = false;
 
   /**
    * @param activatedRoute Current Router route
@@ -28,13 +29,13 @@ export class AppComponent {
         this.museum.id = id;
         this.getMuseumData(this.museum.id);
         state.changeCurrentMuseum(this.museum);
-        console.log(this.museum.pieces);
+        //console.log(this.museum.pieces);
 
       } else {
         this.museum.id = "5XeHXwdtQ4K3GvvRSzVY"; // Pretty much default museum id TODO: ArtSpeaking Id
         this.getMuseumData(this.museum.id);
         state.changeCurrentMuseum(this.museum);
-        console.log("No museum id defined");
+        //console.log("No museum id defined");
       }
     });
 
@@ -42,6 +43,7 @@ export class AppComponent {
 
   ngOnInit() { 
     this.changeBackgrounds();
+    this.resposiveMenuVisible = true;
   }
 
   getMuseumData(id: string) {
@@ -58,6 +60,20 @@ export class AppComponent {
     // Set background images
     document.body.style.backgroundImage = "url('"+ this.museum.background +"')";
     document.getElementById("nav-id").style.backgroundImage = "url('"+ this.museum.background +"')";
-    console.log(this.museum); 
+    //console.log(this.museum); 
+  }
+
+  toggleResponsiveMenu() {
+    var x = window.matchMedia("(max-width: 1000px)");
+    if (x.matches) {
+      this.resposiveMenuVisible = !this.resposiveMenuVisible;
+    }
+  }
+
+  onResize() {
+    var x = window.matchMedia("(max-width: 1000px)");
+    if (x.matches) {
+      this.resposiveMenuVisible = !this.resposiveMenuVisible;
+    }
   }
 }

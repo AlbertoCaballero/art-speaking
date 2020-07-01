@@ -25,9 +25,9 @@ export class QuestionService {
           .add(question)
           .then(
             res => {
-              console.log(res.id);
+              //console.log(res.id);
               question.id = res.id;
-              console.log(question);
+              //console.log(question);
               this.user.questions.push(res.id);
               this.state.changeCurrentUser(this.user);
               this.content.updateDocument("users", this.user.id, this.user);

@@ -4,6 +4,7 @@
     position: fixed;
     z-index: 10;
     top: 0;
+    transition: 0.3s;
     
     background-color: black;
     background-image: url('https://images.squarespace-cdn.com/content/v1/53e43c86e4b0e9902e0be236/1487697157510-662ZESNNIJFSUGEU7D0A/ke17ZwdGBToddI8pDm48kJUlZr2Ql5GtSKWrQpjur5t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UfNdxJhjhuaNor070w_QAc94zjGLGXCa1tSmDVMXf8RUVhMJRmnnhuU1v2M8fLFyJw/_DFA3999-Edit.jpg');
@@ -62,7 +63,7 @@
                 cursor: pointer;
             }
         }
-    }
+   }
     
     .user-name {
         text-transform: uppercase;
@@ -96,6 +97,19 @@
     .button-login { background-image: url(../assets/Login-Google.svg); }
 }
 
+.menu-icon {
+    visibility: visible;
+    float: right;
+    width: 30px;
+    height: auto;
+    margin-top: 18px;
+    padding-bottom: 18px;
+    font-size: 20px;
+    padding-left: 18px;
+    padding-right: 25px;
+    text-transform: uppercase;
+}
+ 
 .under-bar {
      width: 100%;
      text-align: center;
@@ -134,3 +148,68 @@
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    .nav-bar {
+        .logo-container {
+            visibility: hidden;
+            margin-left: 0;
+        }
+        .logo {
+            margin-left: 0;
+            visibility: visible;
+            float: left;
+        }
+        ul {
+            visibility: visible;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba($color: #0000008e, $alpha: 1.0);
+            padding-top: 20vh;
+            padding-bottom: 20vh;
+            transition: 0.3s;
+            a {
+                width: 100vw;
+                padding-top: 5vh;
+                padding-bottom: 5vh;
+            }
+        }
+    }
+    .menu-icon {
+        visibility: visble;
+        float: right;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .nav-bar {
+        .logo-container {
+            visibility: hidden;
+            margin-left: 0;
+        }
+        .logo {
+            margin-left: 0;
+            visibility: visible;
+            float: left;
+        }
+        ul {
+            visibility: visible;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba($color: #0000008e, $alpha: 1.0);
+            padding-top: 20vh;
+            padding-bottom: 20vh;
+            transition: 0.3s;
+            a {
+                width: 100vw;
+                padding-top: 5vh;
+                padding-bottom: 5vh;
+            }
+        }
+    }
+    .menu-icon {
+        visibility: visble;
+        float: right;
+    }
+}

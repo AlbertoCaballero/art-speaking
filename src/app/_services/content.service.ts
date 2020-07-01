@@ -29,8 +29,8 @@ export class ContentService {
           .add(document)
           .then(
             res => {
-              console.log(res.id);
-              console.log(this.user.questionsData);
+              //console.log(res.id);
+              //console.log(this.user.questionsData);
               this.content.readDocument("questions", res.id).subscribe(doc => {
                 this.user.questionsData.push({
                   id: res.id,
@@ -39,10 +39,10 @@ export class ContentService {
                   user: doc.payload.get("userid")
                 })
               });
-              console.log(this.user.questionsData);
+              //console.log(this.user.questionsData);
             },
             err => {
-              console.log(reject(err));
+              //console.log(reject(err));
               alert("Error, unable to send question");
             } 
           )

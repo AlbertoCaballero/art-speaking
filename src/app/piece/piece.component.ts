@@ -14,7 +14,6 @@ export class PieceComponent implements OnInit {
 
   piece: Piece;
   questionsIds: string[];
-  questions: string[] = [];
   user: User;
   questionBox: string;
 
@@ -29,7 +28,7 @@ export class PieceComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.piece);
+    //console.log(this.piece);
     if (this.user.questionsData.length == 0) {
       this.getUserQuestionsIds(this.user.id);
     }
@@ -63,7 +62,7 @@ export class PieceComponent implements OnInit {
       }
       this.user.questions = ids;
       this.state.changeCurrentUser(this.user);
-      console.log(this.user);
+      //console.log(this.user);
     }
   }
 
@@ -77,6 +76,9 @@ export class PieceComponent implements OnInit {
         question: this.questionBox,
         user: this.user.id,
         piece: this.piece.id
+      });
+      resp.then(e => {
+        this.questionBox = "";
       });
 
     } else {

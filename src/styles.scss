@@ -142,3 +142,19 @@ body {
     }
 }
 
+// Adjustments for mobile and smaler devices
+@media only screen and (max-width:1000px) {
+    .piece-container {
+        width: 100%;
+        height: auto;
+
+        .miniature {
+            width: 80vw;
+            height: 80vw;
+        }
+    }
+
+    .text {
+        width: 100%;
+    }
+}

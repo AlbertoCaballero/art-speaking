@@ -28,7 +28,7 @@ export class GalleryComponent implements OnInit {
 
   pieceClicked(id: string) {
     // We have the choosen piece id
-    console.log(id);
+    //console.log(id);
 
     // Set state service piece for all components to see
     this.state.changeCurrentPiece(this.museum.piecesData[this.museum.pieces.indexOf(id)])
@@ -40,7 +40,7 @@ export class GalleryComponent implements OnInit {
     }
 
     this.state.changeCurrentMuseum(this.museum);
-    console.log(this.museum);
+    //console.log(this.museum);
   }
 
   getPiece(id: string) {
