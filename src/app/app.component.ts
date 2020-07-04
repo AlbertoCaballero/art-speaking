@@ -5,7 +5,6 @@ import { ContentService } from './_services/content.service';
 import { Museum } from './_models';
 import { ActivatedRoute } from '@angular/router';
 import { StateService } from './_services/state.service';
-import { stat } from 'fs';
 
 @Component({
   selector: 'app-root',
