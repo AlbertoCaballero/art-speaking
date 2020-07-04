@@ -76,11 +76,10 @@ export class PieceComponent implements OnInit {
         user: this.user.id,
         piece: this.piece.id
       });
-      this.questionBox = "Done";
+      this.questionBox = "";
 
     } else {
       alert("Nothing in question box.");
-      this.questionBox = "Error";
     }
   }
 }

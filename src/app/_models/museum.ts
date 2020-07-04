@@ -8,6 +8,7 @@ export class Museum {
     pieces?: string[];
     piecesData?: Array<Piece>;
     background?: string;
+    gallery?: string;
 
     constructor() {
         this.id = "default-id";

@@ -58,6 +58,7 @@ export class AppComponent {
       this.museum.description = doc.payload.get("description");
       this.museum.background = doc.payload.get("background");
       this.museum.pieces = doc.payload.get("pieces");
+      this.museum.gallery = doc.payload.get("gallery");
       this.changeBackgrounds();
     });
   }
