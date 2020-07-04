@@ -5,6 +5,7 @@ import { ContentService } from './_services/content.service';
 import { Museum } from './_models';
 import { ActivatedRoute } from '@angular/router';
 import { StateService } from './_services/state.service';
+import { stat } from 'fs';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +41,10 @@ export class AppComponent {
           localStorage.setItem("last-museum", this.museum.id);
         } else {
           console.log("No previus museum recorded");
-          // Set the default museum id
+          this.museum.id = "5XeHXwdtQ4K3GvvRSzVY";
+          this.getMuseumData(this.museum.id);
+          state.changeCurrentMuseum(this.museum);
+          localStorage.setItem("last-museum", this.museum.id);
         }
       }
     });

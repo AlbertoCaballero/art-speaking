@@ -5,6 +5,7 @@ export class Question {
     question: string;
     user: string;
     piece: string;
+    museum?: string;
     intent?: string;
     prtedicted?: string;
 }

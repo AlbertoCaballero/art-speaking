@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../_services/state.service';
-import { Piece, Question, User } from '../_models'
+import { Piece, Question, User, Museum } from '../_models'
 import { ContentService } from '../_services/content.service';
 import { AuthService } from '../_services/auth.service';
 import { QuestionService } from '../_services/question.service';
@@ -13,8 +13,9 @@ import { QuestionService } from '../_services/question.service';
 export class PieceComponent implements OnInit {
 
   piece: Piece;
-  questionsIds: string[];
   user: User;
+  museum: Museum;
+  questionsIds: string[];
   questionBox: string = "";
 
   constructor(private content: ContentService, private state: StateService, public auth: AuthService, private questionService: QuestionService) {
@@ -25,6 +26,10 @@ export class PieceComponent implements OnInit {
     this.state.currentUser.subscribe(user => {
       this.user = user;
     });
+
+    this.state.currentMuseum.subscribe(museum => {
+      this.museum = museum;
+    })
   }
 
   ngOnInit() {
@@ -74,7 +79,8 @@ export class PieceComponent implements OnInit {
       let resp = this.questionService.createQuestion({
         question: this.questionBox,
         user: this.user.id,
-        piece: this.piece.id
+        piece: this.piece.id,
+        museum: this.museum.id
       });
       this.questionBox = "";
 
