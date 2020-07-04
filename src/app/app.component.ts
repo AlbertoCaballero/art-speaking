@@ -25,17 +25,23 @@ export class AppComponent {
     this.activatedRoute.queryParams.subscribe(params => {
       let id = params['id'];
 
+      // Set the museum id value from http params
       if (id != null) {
         this.museum.id = id;
         this.getMuseumData(this.museum.id);
         state.changeCurrentMuseum(this.museum);
-        //console.log(this.museum.pieces);
-
+        localStorage.setItem("last-museum", this.museum.id);
       } else {
-        this.museum.id = "5XeHXwdtQ4K3GvvRSzVY"; // Pretty much default museum id TODO: ArtSpeaking Id
-        this.getMuseumData(this.museum.id);
-        state.changeCurrentMuseum(this.museum);
-        //console.log("No museum id defined");
+        console.log("No id");
+        if(localStorage.getItem("last-museum") != null) {
+          this.museum.id = localStorage.getItem("last-museum");
+          this.getMuseumData(this.museum.id);
+          state.changeCurrentMuseum(this.museum);
+          localStorage.setItem("last-museum", this.museum.id);
+        } else {
+          console.log("No previus museum recorded");
+          // Set the default museum id
+        }
       }
     });
 

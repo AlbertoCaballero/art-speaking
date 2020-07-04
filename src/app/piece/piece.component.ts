@@ -15,7 +15,7 @@ export class PieceComponent implements OnInit {
   piece: Piece;
   questionsIds: string[];
   user: User;
-  questionBox: string;
+  questionBox: string = "";
 
   constructor(private content: ContentService, private state: StateService, public auth: AuthService, private questionService: QuestionService) {
     this.state.currentPiece.subscribe(piece => {
@@ -70,16 +70,17 @@ export class PieceComponent implements OnInit {
 
   sendQuestion() {
 
-    if (this.questionBox != "") {
+    if (this.questionBox.match("")) {
       let resp = this.questionService.createQuestion({
         question: this.questionBox,
         user: this.user.id,
         piece: this.piece.id
       });
-      this.questionBox = "";
+      this.questionBox = "Done";
 
     } else {
       alert("Nothing in question box.");
+      this.questionBox = "Error";
     }
   }
 }
