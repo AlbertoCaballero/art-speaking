@@ -19,8 +19,10 @@
         <br><br>
 
         <!-- Question input and button -->
-        <input [(ngModel)]="questionBox" type="text" name="question" id="question-box" placeholder="Ask Something" class="question-input">
-        <input type="button" name="send" (click)="sendQuestion()" id="send-question" value="send" class="send-button">
+        <form (submit)="sendQuestion()">
+            <input [(ngModel)]="questionBox" type="text" name="question" id="question-box" placeholder="Ask Something" class="question-input">
+            <input type="submit" name="send" (click)="sendQuestion()" id="send-question" value="send" class="send-button">
+        </form>
 
         <br><br><br><br><br><br>
     </div>
