@@ -4,6 +4,7 @@ import { Piece, Question, User, Museum } from '../_models'
 import { ContentService } from '../_services/content.service';
 import { AuthService } from '../_services/auth.service';
 import { QuestionService } from '../_services/question.service';
+import { Form, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-piece',
@@ -16,7 +17,9 @@ export class PieceComponent implements OnInit {
   user: User;
   museum: Museum;
   questionsIds: string[];
+  questions: string[];
   questionBox: string = "";
+  form: FormGroup;
 
   constructor(private content: ContentService, private state: StateService, public auth: AuthService, private questionService: QuestionService) {
     this.state.currentPiece.subscribe(piece => {
@@ -33,6 +36,12 @@ export class PieceComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      'question': new FormControl(this.user.questionsData, [
+        Validators.required,
+        Validators.minLength(10)
+      ])
+    });
     //console.log(this.piece);
     if (this.user.questionsData.length == 0) {
       this.getUserQuestionsIds(this.user.id);
