@@ -18,8 +18,9 @@ export class PieceComponent implements OnInit {
   museum: Museum;
   questionsIds: string[];
   questions: string[];
-  questionBox: string = "";
+  questionBox: string;
   form: FormGroup;
+  disable: boolean = true;
 
   constructor(private content: ContentService, private state: StateService, public auth: AuthService, private questionService: QuestionService) {
     this.state.currentPiece.subscribe(piece => {
@@ -83,18 +84,17 @@ export class PieceComponent implements OnInit {
   }
 
   sendQuestion() {
-
-    if (this.questionBox.match("")) {
+    if (this.questionBox) {
       let resp = this.questionService.createQuestion({
         question: this.questionBox,
         user: this.user.id,
         piece: this.piece.id,
         museum: this.museum.id
       });
-      this.questionBox = "";
+      this.questionBox = null;
 
     } else {
-      alert("Nothing in question box.");
+      console.log("Nothing in question box");
     }
   }
 }

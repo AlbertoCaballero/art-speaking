@@ -19,9 +19,9 @@
         <br><br>
 
         <!-- Question input and button -->
-        <form (submit)="sendQuestion()">
-            <input required [(ngModel)]="questionBox" type="text" name="question" id="question-box" placeholder="Ask Something" class="question-input">
-            <input type="submit" name="send" (click)="sendQuestion()" id="send-question" value="send" class="send-button">
+        <form name="question-form" (submit)="sendQuestion()">
+            <input [(ngModel)]="questionBox" type="text" name="question" id="question-box" placeholder="Ask Something" class="question-input" required>
+            <input type="submit" name="send" (click)="sendQuestion()" id="send-question" value="send" class="send-button" ng-disable="disable">
         </form>
 
         <br><br><br><br><br><br>
