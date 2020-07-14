@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../_services/state.service';
-import { Piece, Question, User, Museum } from '../_models'
+import { Piece, User, Museum } from '../_models'
 import { ContentService } from '../_services/content.service';
 import { AuthService } from '../_services/auth.service';
 import { QuestionService } from '../_services/question.service';
-import { Form, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-piece',

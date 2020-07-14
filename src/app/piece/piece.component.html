@@ -1,5 +1,4 @@
 <div class="content-loader">
-
     <div class="piece-view" [style.background-image]="'url(' + piece.highres + ')'">
     </div>
 
@@ -12,7 +11,7 @@
         
         <div *ngFor="let question of user.questionsData; let i=index">
             <div *ngIf="question.piece == piece.id" class="question">
-                {{ question.question }}
+                {{question.question}}
             </div>
         </div>
 

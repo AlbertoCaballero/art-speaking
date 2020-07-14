@@ -2,7 +2,7 @@
   <!-- Logo and name -->
   <div class="logo-container">
     <img routerLink="/home" src="../assets/logo-skeletonized.png" alt="Art Speaking Logo" class="logo">
-    <b>{{ title }}&nbsp;&nbsp;</b><b class="user-name" *ngIf="auth.user$ | async as user; else login"><button class="button-logout" (click)="auth.signOut()">&nbsp;</button> &nbsp;{{ user.name }} </b>
+    <b class="title" *ngIf="resposiveMenuVisible">{{ title }}&nbsp;&nbsp;</b><b class="user-name" *ngIf="auth.user$ | async as user; else login"><button class="button-logout" (click)="auth.signOut()">&nbsp;</button> &nbsp;{{ user.name }} </b>
   </div>
   
   <!-- Navigation links -->

@@ -150,9 +150,8 @@
 
 @media only screen and (max-width: 1000px) {
     .nav-bar {
-        .logo-container {
+        .title {
             visibility: hidden;
-            margin-left: 0;
         }
         .logo {
             margin-left: 0;
@@ -186,7 +185,7 @@
 
 @media only screen and (max-width: 500px) {
     .nav-bar {
-        .logo-container {
+        .title {
             visibility: hidden;
         }
         .user-name, .button-login, .button-logout {
