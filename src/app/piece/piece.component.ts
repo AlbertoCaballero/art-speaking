@@ -48,7 +48,7 @@ export class PieceComponent implements OnInit {
       this.getUserQuestionsIds(this.user.id);
     }
 
-    console.log(this.user);
+    //console.log(this.user);
   }
 
   // Read user data to retrive question ids
@@ -94,7 +94,7 @@ export class PieceComponent implements OnInit {
       this.questionBox = null;
 
     } else {
-      console.log("Nothing in question box");
+      alert("Nothing in question box");
     }
   }
 }
